@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cchx0000</title>
+    <meta name="description" content="Personal site for cchx0000, hosted on GitHub Pages.">
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1020;
+        --panel: rgba(13, 20, 38, 0.72);
+        --text: #edf2ff;
+        --muted: #a8b3cf;
+        --line: rgba(255, 255, 255, 0.14);
+        --accent: #51d2b8;
+        --accent-2: #f0c65a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 18% 20%, rgba(81, 210, 184, 0.22), transparent 28rem),
+          radial-gradient(circle at 84% 10%, rgba(240, 198, 90, 0.18), transparent 24rem),
+          linear-gradient(135deg, #0b1020 0%, #111827 48%, #10151f 100%);
+      }
+
+      main {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 2rem;
+      }
+
+      .shell {
+        width: min(100%, 920px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+        overflow: hidden;
+      }
+
+      .art {
+        height: 180px;
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(90deg, rgba(81, 210, 184, 0.26), transparent 62%),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.09) 0 1px, transparent 1px 72px),
+          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 72px);
+        position: relative;
+      }
+
+      .art::before,
+      .art::after {
+        content: "";
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+      }
+
+      .art::before {
+        inset: 44px auto auto 52px;
+        width: 120px;
+        height: 72px;
+        background: rgba(81, 210, 184, 0.2);
+      }
+
+      .art::after {
+        right: 58px;
+        bottom: 34px;
+        width: 220px;
+        height: 92px;
+        background: rgba(240, 198, 90, 0.14);
+      }
+
+      .content {
+        padding: clamp(2rem, 6vw, 4.5rem);
+      }
+
+      p.kicker {
+        margin: 0 0 1rem;
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.75rem, 8vw, 6rem);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      p.lede {
+        max-width: 42rem;
+        margin: 1.5rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.4vw, 1.25rem);
+        line-height: 1.7;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.75rem;
+        padding: 0 1rem;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.06);
+        font-weight: 700;
+      }
+
+      .button.primary {
+        border-color: rgba(81, 210, 184, 0.72);
+        background: rgba(81, 210, 184, 0.16);
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 1rem;
+          place-items: stretch;
+          align-items: center;
+        }
+
+        .art {
+          height: 132px;
+        }
+
+        .art::after {
+          right: 22px;
+          width: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="shell" aria-label="Homepage">
+        <div class="art" aria-hidden="true"></div>
+        <div class="content">
+          <p class="kicker">GitHub Pages is live</p>
+          <h1>cchx0000</h1>
+          <p class="lede">
+            This site is hosted from a public GitHub Pages repository. The first page is online;
+            the next step is shaping it into a homepage, portfolio, blog, or project index.
+          </p>
+          <div class="links" aria-label="Links">
+            <a class="button primary" href="https://github.com/cchx0000">GitHub Profile</a>
+            <a class="button" href="https://github.com/cchx0000/cchx0000.github.io">Source Repository</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
