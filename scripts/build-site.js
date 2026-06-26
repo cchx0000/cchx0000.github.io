@@ -105,23 +105,13 @@ const siteTitle = title(markdown);
 const tagline = rootField(markdown, "Tagline", "Research, publications, code notes, and technical experiments.");
 const footer = rootField(markdown, "Footer", `© 2026 ${siteTitle}. Research homepage built with GitHub Pages.`);
 
-const hero = section(markdown, "Hero");
-const heroPrimary = splitButton(field(hero, "Primary"), "Publications", "#publications");
-const heroSecondary = splitButton(field(hero, "Secondary"), "Research Areas", "#research");
-
-const metrics = pipeList(section(markdown, "Metrics"));
+const bio = section(markdown, "Bio") || section(markdown, "Hero");
+const heroPrimary = splitButton(field(bio, "Primary"), "Publications", "#publications");
+const heroSecondary = splitButton(field(bio, "Secondary"), "Research Areas", "#research");
 const research = section(markdown, "Research");
 const publications = section(markdown, "Publications");
 const projects = section(markdown, "Projects");
 const contact = section(markdown, "Contact");
-
-const metricHtml = metrics
-  .map(([label, desc]) => `
-                <div class="metric">
-                  <strong>${html(label)}</strong>
-                  <span>${html(desc)}</span>
-                </div>`)
-  .join("");
 
 const researchHtml = cards(research)
   .map(({ parts, body }) => `
@@ -134,7 +124,7 @@ const researchHtml = cards(research)
 
 const publicationHtml = cards(publications)
   .map(({ parts, body }) => {
-    const [year, name, href] = parts;
+    const [year, name, href, label] = parts;
     return `
             <article class="publication">
               <div class="pub-year">${html(year)}</div>
@@ -142,7 +132,7 @@ const publicationHtml = cards(publications)
                 <h3>${html(name)}</h3>
                 <p>${html(body)}</p>
               </div>
-              <a class="pub-link" href="${attr(href || "#")}">Link</a>
+              <a class="pub-link" href="${attr(href || "#")}">${html(label || "Link")}</a>
             </article>`;
   })
   .join("");
@@ -195,21 +185,33 @@ const output = `<!doctype html>
       </aside>
 
       <main id="top" class="content">
-        <section class="hero wrap" aria-label="Research overview">
+        <section class="hero wrap" aria-label="Bio">
           <div class="hero-main">
-            <p class="eyebrow">${html(field(hero, "Eyebrow", "Research / Publications"))}</p>
-            <h2>${html(field(hero, "Title", "Research notes and published work."))}</h2>
-            <p class="lede">${html(field(hero, "Body"))}</p>
+            <p class="eyebrow">${html(field(bio, "Eyebrow", "Bio"))}</p>
+            <h2>${html(field(bio, "Title", siteTitle))}</h2>
+            <p class="lede">${html(field(bio, "Body"))}</p>
             <div class="hero-actions">
               <a class="button" href="${attr(heroPrimary.href)}">${html(heroPrimary.text)}</a>
               <a class="button secondary" href="${attr(heroSecondary.href)}">${html(heroSecondary.text)}</a>
             </div>
           </div>
 
-          <aside class="hero-card" aria-label="Research summary">
+          <aside class="hero-card" aria-label="Bio details">
             <div class="hero-card-visual" aria-hidden="true"></div>
             <div class="hero-card-body">
-              <div class="metric-grid">${metricHtml}
+              <div class="bio-card">
+                <p class="eyebrow">Research Focus</p>
+                <p>${html(field(bio, "Focus", tagline))}</p>
+                <dl>
+                  <div>
+                    <dt>Affiliation</dt>
+                    <dd>${html(field(bio, "Affiliation", "Independent research"))}</dd>
+                  </div>
+                  <div>
+                    <dt>Email</dt>
+                    <dd>${html(field(bio, "Email", ""))}</dd>
+                  </div>
+                </dl>
               </div>
             </div>
           </aside>
