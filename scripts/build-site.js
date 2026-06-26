@@ -112,6 +112,7 @@ const research = section(markdown, "Research");
 const publications = section(markdown, "Publications");
 const projects = section(markdown, "Projects");
 const contact = section(markdown, "Contact");
+const showProjects = /^Visible:\s*true\s*$/im.test(projects);
 
 const researchHtml = cards(research)
   .map(({ parts, body }) => `
@@ -147,6 +148,33 @@ const projectListHtml = projectListCard.list
 
 const contactButton = splitButton(field(contact, "Button"), `github.com/${siteTitle}`, `https://github.com/${siteTitle}`);
 
+const projectsNavHtml = showProjects ? `
+              <a href="#projects">Projects</a>` : "";
+
+const projectsSectionHtml = showProjects ? `
+        <section id="projects" class="wrap">
+          <div class="section-head">
+            <h2>Projects</h2>
+            <p>${html(field(projects, "Intro"))}</p>
+          </div>
+
+          <div class="notes-grid">
+            <article class="note">
+              <h3>${html(projectIntroCard.parts[0])}</h3>
+              <p>${html(projectIntroCard.body)}</p>
+              <a class="button secondary" href="${attr(projectButton.href)}">${html(projectButton.text)}</a>
+            </article>
+
+            <article class="note">
+              <h3>${html(projectListCard.parts[0])}</h3>
+              <ul class="note-list">
+${projectListHtml}
+              </ul>
+            </article>
+          </div>
+        </section>
+` : "";
+
 const output = `<!doctype html>
 <html lang="en">
   <head>
@@ -172,7 +200,7 @@ const output = `<!doctype html>
             <nav class="nav" aria-label="Primary navigation">
               <a href="#research">Research</a>
               <a href="#publications">Publications</a>
-              <a href="#projects">Projects</a>
+${projectsNavHtml}
               <a href="#contact">Contact</a>
             </nav>
           </div>
@@ -237,28 +265,7 @@ const output = `<!doctype html>
           </div>
         </section>
 
-        <section id="projects" class="wrap">
-          <div class="section-head">
-            <h2>Projects</h2>
-            <p>${html(field(projects, "Intro"))}</p>
-          </div>
-
-          <div class="notes-grid">
-            <article class="note">
-              <h3>${html(projectIntroCard.parts[0])}</h3>
-              <p>${html(projectIntroCard.body)}</p>
-              <a class="button secondary" href="${attr(projectButton.href)}">${html(projectButton.text)}</a>
-            </article>
-
-            <article class="note">
-              <h3>${html(projectListCard.parts[0])}</h3>
-              <ul class="note-list">
-${projectListHtml}
-              </ul>
-            </article>
-          </div>
-        </section>
-
+${projectsSectionHtml}
         <section id="contact" class="wrap">
           <div class="contact">
             <div>

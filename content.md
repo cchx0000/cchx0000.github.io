@@ -16,27 +16,27 @@ Secondary: Research Areas | #research
 
 ## Research
 
-Intro: The research program is organized around finite readout structures: an S4 physical frame, Regge boundary area records, shell quotients, and spinorial/frame residues. Each branch separates what is structural, what is conditional, and what remains open dynamical or observational data.
+Intro: My research interests sit at the interface of mathematical physics, discrete geometry, quantum information, and finite observer theory. I am especially interested in how continuum structures can emerge from finite records, symmetry constraints, and coarse-grained readout.
 
-### S4 Frame Completion | Finite Observer Geometry
+### Mathematical Physics | Discrete Geometry and Spacetime
 
-The S4 frame is used as a finite observer completion whose standard real three-dimensional module supplies the physical frame for shell readout, tensor decomposition, and spin-2-native Regge observer constructions.
+Discrete and piecewise-flat approaches to geometry, including Regge-style spacetime models, finite frame structures, curvature readout, and the relation between local combinatorial data and continuum geometric behavior.
 
-### Relational Shell Dynamics | Log Far Field and BTFR
+### Quantum Information | Finite Records and Hidden Codebooks
 
-Recursive shell balance on two-dimensional relational shells yields a logarithmic outer potential and flat rotation branch. Baryonic Tully-Fisher scaling is treated as conditional on closure, minimal analytic invariant response, Schur uniqueness, and additive baryonic capacity.
+Information-theoretic models in which visible finite-capacity records constrain or calibrate hidden quantum structure, with particular interest in qutrit systems, topological codebooks, and boundary-area readout.
 
-### Tensor Shell Readout | Trace, Shear, and Regge-RG
+### Gravity and Astrophysics | Coarse-Grained Shell Dynamics
 
-The scalar shell variable is promoted to a symmetric tensor shell record. The trace channel recovers the scalar shell law and remains SO(3)-protected, while the traceless channel carries finite-frame shear branches whose continuum spin-2 isotropy depends on an orientationally disordered Regge-RG phase.
+Coarse-grained gravitational observables, relational shell models, galactic far-field phenomenology, lensing readout, and the distinction between microscopic dynamics and retained observable shell data.
 
-### Regge Quantum Information | It From Qutrit
+### Symmetry and Representation Theory | Finite Groups and Gauge Residues
 
-Boundary area records remain commutative and visible, while a hidden qutrit codebook carries noncommutative logical structure. The working chain uses finite area calibration, Clifford+D arithmetic over Z[zeta_9, 1/3], twisted Z/3 Dijkgraaf-Witten input, and mapping-class/Pachner realization.
+Finite group actions, S4 and related frame completions, representation-theoretic decompositions, anomaly-compatible matter ledgers, and the possibility that internal gauge structure can appear as a residue of geometric observer data.
 
-### Standard-Model Residues | Spin-2-Native Observer
+### Computation and Reproducibility | Audits, Notes, and Tools
 
-A Regge cutoff observer carries the gravitational spin-2 upstream first. The Standard-Model gauge and matter skeleton is then read as a frame/shape residue: a colour carrier from the complexified shape quotient, a weak doublet from the spin frame, and a one-family exterior-algebra ledger without assuming a gauged GUT stage.
+Small computational audits, symbolic checks, static-site publishing, and reproducible workflows for turning research drafts into inspectable artifacts.
 
 ## Publications
 
@@ -60,6 +60,7 @@ Builds a geometry-first observer argument: A5 to A4 to S4 supplies a four-slot f
 
 ## Projects
 
+Visible: false
 Intro: Supporting software and public repositories sit below the research record. The project section highlights release infrastructure, reproducible checks, and older code archives.
 
 ### Markdown-Driven Research Homepage
