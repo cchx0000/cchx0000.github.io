@@ -258,7 +258,6 @@ ${projectsNavHtml}
         <section id="publications" class="wrap">
           <div class="section-head">
             <h2>Publications</h2>
-            <p>${html(field(publications, "Intro"))}</p>
           </div>
 
           <div class="publication-list">${publicationHtml}
