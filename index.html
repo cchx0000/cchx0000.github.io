@@ -82,12 +82,14 @@
       .identity h1 {
         margin: 0;
         font-size: 1.55rem;
+        line-height: 1.1;
         letter-spacing: 0;
       }
 
       .identity p {
         margin: 0;
         color: var(--sidebar-muted);
+        font-size: 0.92rem;
         line-height: 1.55;
       }
 
@@ -134,11 +136,11 @@
 
       .hero {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
-        gap: clamp(2rem, 5vw, 4rem);
-        align-items: stretch;
-        min-height: 100vh;
-        padding: clamp(3rem, 7vw, 5rem) 0;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.52fr);
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: center;
+        min-height: auto;
+        padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.8rem, 4vw, 3rem);
       }
 
       .hero-main {
@@ -164,24 +166,29 @@
 
       h2 {
         margin-bottom: 1.25rem;
-        font-size: clamp(3.3rem, 9vw, 7.8rem);
-        line-height: 0.9;
+        font-size: clamp(2rem, 4.5vw, 4rem);
+        line-height: 1.05;
         letter-spacing: 0;
+      }
+
+      .hero h2 {
+        font-size: clamp(2.4rem, 5.6vw, 5rem);
+        line-height: 1.02;
       }
 
       .lede {
         max-width: 46rem;
         margin-bottom: 0;
         color: var(--muted);
-        font-size: clamp(1.08rem, 2.2vw, 1.35rem);
-        line-height: 1.72;
+        font-size: clamp(1rem, 1.6vw, 1.18rem);
+        line-height: 1.68;
       }
 
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 0.75rem;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
       }
 
       .button {
@@ -215,7 +222,7 @@
       }
 
       .hero-card-visual {
-        min-height: 220px;
+        min-height: 132px;
         border-bottom: 1px solid var(--line);
         background:
           radial-gradient(circle at 68% 32%, rgba(184, 92, 56, 0.24), transparent 6rem),
@@ -225,23 +232,23 @@
       }
 
       .hero-card-body {
-        padding: 1.25rem;
+        padding: 1rem;
       }
 
       .bio-card p {
         color: var(--muted);
-        line-height: 1.7;
+        line-height: 1.62;
       }
 
       .bio-card dl {
         display: grid;
-        gap: 0.75rem;
-        margin: 1.25rem 0 0;
+        gap: 0.65rem;
+        margin: 1rem 0 0;
       }
 
       .bio-card div {
         border-top: 1px solid var(--line);
-        padding-top: 0.75rem;
+        padding-top: 0.65rem;
       }
 
       .bio-card dt {
@@ -466,7 +473,7 @@
 
         .hero {
           min-height: auto;
-          padding-top: 3rem;
+          padding-top: 2rem;
         }
 
         .research-grid {
@@ -492,7 +499,11 @@
         }
 
         h2 {
-          font-size: clamp(2.8rem, 16vw, 4.6rem);
+          font-size: clamp(2rem, 10vw, 3.2rem);
+        }
+
+        .hero h2 {
+          font-size: clamp(2.25rem, 12vw, 3.6rem);
         }
 
       }
