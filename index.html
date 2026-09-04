@@ -4,443 +4,708 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Research homepage of cchx0000 — arithmetic geometry, number theory, recursive Cartan structures, geometric analysis, and mathematical physics." />
-  <meta name="theme-color" content="#090b10" />
+  <meta name="theme-color" content="#f4f1ea" />
   <title>cchx0000 — Mathematical Research</title>
   <style>
     :root {
-      --bg: #090b10;
-      --panel: #10141c;
-      --panel-2: #0d1118;
-      --text: #eef2f7;
-      --muted: #a6afbd;
-      --line: #222a36;
-      --accent: #9cc4ff;
-      --accent-2: #c3a7ff;
-      --accent-3: #94e2c3;
-      --max: 1180px;
-      --radius: 22px;
+      --paper: #f4f1ea;
+      --paper-2: #ece8df;
+      --ink: #171717;
+      --soft-ink: #55514a;
+      --quiet: #7a746b;
+      --rule: #cdc7bc;
+      --rule-dark: #a9a196;
+      --accent: #7b1f2c;
+      --blue: #233d66;
+      --max: 1160px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      color: var(--text);
       background:
-        radial-gradient(circle at 12% 0%, rgba(156, 196, 255, .11), transparent 31rem),
-        radial-gradient(circle at 88% 4%, rgba(195, 167, 255, .09), transparent 28rem),
-        var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+        linear-gradient(rgba(255,255,255,.26), rgba(255,255,255,.26)),
+        var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      line-height: 1.62;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-    .wrap { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .sans {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-    nav {
+    .wrap {
+      width: min(calc(100% - 44px), var(--max));
+      margin: 0 auto;
+    }
+
+    .masthead {
+      border-bottom: 1px solid var(--rule-dark);
+      background: rgba(244,241,234,.94);
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(9, 11, 16, .78);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      z-index: 20;
+      backdrop-filter: blur(12px);
     }
-    .nav-inner {
-      min-height: 66px;
+
+    .masthead-inner {
+      min-height: 58px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .03em;
-    }
-    .mark {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 22px rgba(156,196,255,.5);
-    }
-    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: 13px; }
-    .nav-links a:hover { color: var(--text); }
 
-    header { padding: 104px 0 72px; }
-    .eyebrow {
-      display: inline-flex;
+    .identity {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
       align-items: center;
-      gap: 8px;
-      padding: 7px 11px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.025);
-      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .nav a { color: var(--soft-ink); text-decoration: none; }
+    .nav a:hover { color: var(--accent); }
+
+    header {
+      padding: 94px 0 76px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .kicker {
+      margin-bottom: 22px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(50px, 8vw, 94px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 500;
+    }
+
+    .lead {
+      max-width: 790px;
+      margin: 30px 0 0;
+      color: var(--soft-ink);
+      font-size: clamp(19px, 2.1vw, 25px);
+      line-height: 1.48;
+    }
+
+    .hero-note {
+      padding-top: 16px;
+      border-top: 2px solid var(--ink);
+      color: var(--soft-ink);
+      font-size: 14px;
+    }
+
+    .hero-note strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 10px;
       font-size: 12px;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
-    h1 {
-      max-width: 970px;
-      margin: 24px 0 20px;
-      font-size: clamp(48px, 8vw, 102px);
-      line-height: .98;
-      letter-spacing: -.055em;
-      font-weight: 760;
-    }
-    .gradient {
-      background: linear-gradient(110deg, #ffffff 10%, #b8d5ff 48%, #cfb9ff 82%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .lead {
-      max-width: 820px;
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(18px, 2.2vw, 24px);
-      line-height: 1.55;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 17px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: var(--panel);
-      font-size: 14px;
-      font-weight: 650;
-      transition: transform .16s ease, border-color .16s ease, background .16s ease;
-    }
-    .button:hover { transform: translateY(-1px); border-color: #3a4658; background: #151b25; }
-    .button.primary { background: #eef2f7; color: #0a0d12; border-color: #eef2f7; }
 
-    .signal-grid {
-      margin-top: 68px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--panel-2);
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 24px;
+      font-size: 13px;
     }
-    .signal { padding: 24px; min-height: 142px; border-right: 1px solid var(--line); }
-    .signal:last-child { border-right: 0; }
-    .signal b { display: block; font-size: 14px; margin-bottom: 9px; }
-    .signal span { color: var(--muted); font-size: 13px; line-height: 1.55; }
 
-    section { padding: 72px 0; }
-    .section-head {
+    section { padding: 78px 0; border-bottom: 1px solid var(--rule); }
+
+    .section-grid {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 36px;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 56px;
       align-items: start;
-      margin-bottom: 34px;
     }
-    .section-kicker { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    h2 { margin: 8px 0 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.08; letter-spacing: -.035em; }
-    .section-copy { color: var(--muted); font-size: 17px; max-width: 720px; margin: 4px 0 0; }
 
-    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .card {
-      position: relative;
-      min-height: 315px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
-      overflow: hidden;
+    .section-label {
+      position: sticky;
+      top: 88px;
+      color: var(--quiet);
+      font-size: 11px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 700;
     }
-    .card::after {
-      content: "";
-      position: absolute;
-      width: 190px;
-      height: 190px;
-      right: -90px;
-      bottom: -110px;
-      border: 1px solid rgba(156,196,255,.14);
-      border-radius: 50%;
-    }
-    .card .num { color: #677286; font-size: 12px; font-variant-numeric: tabular-nums; letter-spacing: .08em; }
-    .card h3 { margin: 44px 0 12px; font-size: 25px; letter-spacing: -.025em; }
-    .card p { margin: 0; color: var(--muted); font-size: 15px; max-width: 92%; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-    .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: #c7cfdb; font-size: 11px; background: #0b0f15; }
 
-    .framework {
+    h2 {
+      margin: 0 0 24px;
+      max-width: 760px;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      font-weight: 500;
+    }
+
+    .intro {
+      margin: 0 0 38px;
+      max-width: 790px;
+      color: var(--soft-ink);
+      font-size: 18px;
+    }
+
+    .field-list {
+      border-top: 1px solid var(--rule-dark);
+    }
+
+    .field-row {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 16px;
+      grid-template-columns: 52px 1.1fr 1.9fr;
+      gap: 22px;
+      padding: 25px 0 27px;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
     }
-    .framework-main, .framework-side {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel-2);
+
+    .field-index {
+      font-size: 12px;
+      color: var(--quiet);
+      padding-top: 4px;
     }
-    .framework-main { padding: 34px; }
-    .formula {
-      margin: 26px 0;
-      padding: 24px;
-      border: 1px solid #293345;
-      border-radius: 16px;
-      background: #0a0e14;
-      color: #d7e7ff;
+
+    .field-row h3 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .field-row p {
+      margin: 0;
+      color: var(--soft-ink);
+      font-size: 15px;
+    }
+
+    .architecture {
+      margin: 36px 0 0;
+      padding: 28px 30px;
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: clamp(14px, 1.8vw, 20px);
-      line-height: 1.75;
+      font-size: clamp(13px, 1.6vw, 17px);
+      line-height: 1.85;
       overflow-x: auto;
       white-space: nowrap;
     }
-    .framework-main p { color: var(--muted); margin: 0; }
-    .framework-side { padding: 10px 26px; }
-    .principle { padding: 22px 0; border-bottom: 1px solid var(--line); }
-    .principle:last-child { border-bottom: 0; }
-    .principle strong { display: block; font-size: 14px; margin-bottom: 4px; }
-    .principle span { color: var(--muted); font-size: 13px; }
 
-    .programs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .program {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255,255,255,.018);
-    }
-    .program h3 { margin: 0 0 10px; font-size: 18px; }
-    .program p { margin: 0; color: var(--muted); font-size: 14px; }
-    .program small { display: block; color: var(--accent-3); margin-top: 18px; font-size: 11px; text-transform: uppercase; letter-spacing: .09em; }
-
-    .methods {
+    .principles {
+      margin-top: 28px;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--rule-dark);
+      border-left: 1px solid var(--rule-dark);
     }
-    .method {
-      min-height: 116px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      color: var(--muted);
-      font-size: 13px;
-      background: #0c1016;
-    }
-    .method b { display: block; color: var(--text); font-size: 13px; margin-bottom: 8px; }
 
-    .note {
-      padding: 28px 30px;
-      border-left: 2px solid var(--accent-2);
-      background: linear-gradient(90deg, rgba(195,167,255,.08), transparent 70%);
-      color: var(--muted);
+    .principle {
+      min-height: 190px;
+      padding: 22px;
+      border-right: 1px solid var(--rule-dark);
+      border-bottom: 1px solid var(--rule-dark);
+    }
+
+    .principle b {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    .principle span {
+      color: var(--soft-ink);
+      font-size: 13px;
+    }
+
+    .program-table {
+      border-top: 2px solid var(--ink);
+    }
+
+    .program-row {
+      display: grid;
+      grid-template-columns: 1.15fr 2fr 140px;
+      gap: 28px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .program-name {
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .program-copy {
+      color: var(--soft-ink);
       font-size: 14px;
     }
 
-    footer { padding: 42px 0 58px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-    .footer-inner { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
-    .footer-links { display: flex; gap: 18px; }
-    .footer-links a:hover { color: var(--text); }
-
-    @media (max-width: 900px) {
-      .signal-grid { grid-template-columns: repeat(2, 1fr); }
-      .signal:nth-child(2) { border-right: 0; }
-      .signal:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-      .section-head, .framework { grid-template-columns: 1fr; }
-      .programs { grid-template-columns: 1fr 1fr; }
-      .methods { grid-template-columns: 1fr 1fr; }
+    .status {
+      justify-self: end;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid #b99b9f;
+      padding: 6px 8px;
+      white-space: nowrap;
     }
 
-    @media (max-width: 640px) {
-      .wrap { width: min(calc(100% - 24px), var(--max)); }
-      .nav-links { display: none; }
-      header { padding: 76px 0 52px; }
-      .signal-grid, .cards, .programs, .methods { grid-template-columns: 1fr; }
-      .signal { border-right: 0; border-bottom: 1px solid var(--line); }
-      .signal:last-child { border-bottom: 0; }
-      .card { min-height: 0; }
-      .section-head { gap: 16px; }
-      section { padding: 54px 0; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
+    .manuscripts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .manuscript {
+      min-height: 235px;
+      padding: 25px 26px 24px;
+      border: 1px solid var(--rule-dark);
+      background: rgba(255,255,255,.20);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .manuscript-type {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .manuscript h3 {
+      margin: 18px 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    .manuscript p {
+      margin: 0;
+      color: var(--soft-ink);
+      font-size: 14px;
+    }
+
+    .manuscript footer {
+      margin-top: 22px;
+      padding: 14px 0 0;
+      border-top: 1px solid var(--rule);
+      color: var(--quiet);
+      font-size: 12px;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--rule-dark);
+      border-left: 1px solid var(--rule-dark);
+    }
+
+    .tool {
+      padding: 20px;
+      min-height: 140px;
+      border-right: 1px solid var(--rule-dark);
+      border-bottom: 1px solid var(--rule-dark);
+      font-size: 13px;
+      color: var(--soft-ink);
+    }
+
+    .tool strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .research-note {
+      margin-top: 30px;
+      padding: 24px 28px;
+      border-left: 3px solid var(--accent);
+      background: rgba(123,31,44,.045);
+      color: var(--soft-ink);
+      font-size: 14px;
+    }
+
+    .research-note strong { color: var(--ink); }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-box p {
+      margin: 0;
+      max-width: 700px;
+      color: var(--soft-ink);
+      font-size: 17px;
+    }
+
+    .contact-links {
+      border-top: 1px solid var(--rule-dark);
+      font-size: 14px;
+    }
+
+    .contact-links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+    }
+
+    .site-footer {
+      padding: 34px 0 46px;
+      color: var(--quiet);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    @media (max-width: 930px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 46px; }
+      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      .section-label { position: static; }
+      .principles { grid-template-columns: repeat(2, 1fr); }
+      .tool-grid { grid-template-columns: repeat(2, 1fr); }
+      .program-row { grid-template-columns: 1fr 1.5fr; }
+      .status { grid-column: 1 / -1; justify-self: start; }
+    }
+
+    @media (max-width: 680px) {
+      .wrap { width: min(calc(100% - 26px), var(--max)); }
+      .nav { display: none; }
+      header { padding: 68px 0 54px; }
+      section { padding: 58px 0; }
+      .field-row { grid-template-columns: 34px 1fr; gap: 14px; }
+      .field-row p { grid-column: 2; }
+      .principles, .manuscripts, .tool-grid, .contact-box { grid-template-columns: 1fr; }
+      .program-row { grid-template-columns: 1fr; gap: 10px; }
+      .status { grid-column: auto; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top"><span class="mark"></span><span>cchx0000 / research</span></a>
-      <div class="nav-links" aria-label="Primary navigation">
-        <a href="#fields">Fields</a>
+  <nav class="masthead">
+    <div class="wrap masthead-inner sans">
+      <a class="identity" href="#top">cchx0000 · mathematics</a>
+      <div class="nav" aria-label="Primary navigation">
+        <a href="#research">Research</a>
         <a href="#framework">Framework</a>
         <a href="#programs">Programs</a>
-        <a href="#methods">Methods</a>
+        <a href="#manuscripts">Manuscripts</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
   <main id="top">
     <header>
-      <div class="wrap">
-        <div class="eyebrow">Mathematics · arithmetic · geometry · analysis</div>
-        <h1><span class="gradient">Structures behind local-to-global mathematics.</span></h1>
-        <p class="lead">
-          I work across arithmetic geometry, number theory, geometric analysis, and mathematical physics,
-          with a recurring focus on recursive structures that turn finite local data into global descent,
-          obstruction, capacity, or rigidity statements.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#fields">Current research</a>
-          <a class="button" href="https://github.com/cchx0000" rel="me">GitHub profile</a>
-          <a class="button" href="mailto:Chenxi_Cai@live.com">Contact</a>
+      <div class="wrap hero-grid">
+        <div>
+          <div class="kicker sans">Independent mathematical research</div>
+          <h1>Arithmetic, geometry, recursion, and global structure.</h1>
+          <p class="lead">
+            My work studies how finite local data can acquire enough compatibility to force global arithmetic,
+            geometric, analytic, or spectral consequences. Current projects span arithmetic geometry, number theory,
+            recursive Cartan structures, geometric analysis, and mathematical physics.
+          </p>
         </div>
-
-        <div class="signal-grid" aria-label="Research themes">
-          <div class="signal"><b>Arithmetic geometry</b><span>Prismatic and Frobenius structures, Selmer descent, mixed motives, K-theory, and Arakelov-type height data.</span></div>
-          <div class="signal"><b>Number theory</b><span>Elliptic curves, BSD interfaces, Mertens-type phenomena, additive prime problems, abc, and RH-related structures.</span></div>
-          <div class="signal"><b>Geometric analysis</b><span>Recursive capacity and incidence mechanisms motivated by Navier–Stokes and Kakeya-type problems.</span></div>
-          <div class="signal"><b>Mathematical physics</b><span>Gauge-theoretic and spectral interfaces, including Yang–Mills mass-gap structures and geometric observability.</span></div>
-        </div>
+        <aside class="hero-note">
+          <strong class="sans">Current focus</strong>
+          Local-to-global descent; source-native arithmetic objects; recursive extension and capacity mechanisms;
+          exact finite certificates before asymptotic or continuous readout.
+          <div class="hero-links sans">
+            <a href="https://github.com/cchx0000" rel="me">GitHub</a>
+            <a href="mailto:Chenxi_Cai@live.com">Email</a>
+          </div>
+        </aside>
       </div>
     </header>
 
-    <section id="fields">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">01 / Fields</div>
-            <h2>Current research landscape</h2>
-          </div>
-          <p class="section-copy">
-            The projects are organized less by classical subject boundaries than by a common question:
-            what finite arithmetic, homological, incidence, or geometric data are sufficient to force a global conclusion?
+    <section id="research">
+      <div class="wrap section-grid">
+        <div class="section-label sans">01 · Research fields</div>
+        <div>
+          <h2>Research landscape</h2>
+          <p class="intro">
+            The projects are grouped by mathematical source rather than by a single technique. A common theme is to retain
+            enough provenance and extension data to distinguish genuine global information from a faithful re-encoding of local structure.
           </p>
-        </div>
 
-        <div class="cards">
-          <article class="card">
-            <div class="num">A — ARITHMETIC / MOTIVIC</div>
-            <h3>Arithmetic Cartan, prismatic & motivic geometry</h3>
-            <p>Arithmetic differential structures, Frobenius transport, prismatic comparison, Selmer data, mixed motives, K-theoretic interfaces, and local-to-global descent.</p>
-            <div class="tags"><span class="tag">prisms</span><span class="tag">Frobenius</span><span class="tag">Selmer</span><span class="tag">motives</span><span class="tag">Arakelov</span></div>
-          </article>
-
-          <article class="card">
-            <div class="num">B — DIOPHANTINE / ANALYTIC</div>
-            <h3>Elliptic curves & prime arithmetic</h3>
-            <p>Recursive Selmer structures, BSD-facing arithmetic, rank constraints, Mertens and Möbius transfer, Goldbach and twin-prime mechanisms, and abc-type prime-birth dynamics.</p>
-            <div class="tags"><span class="tag">elliptic curves</span><span class="tag">BSD</span><span class="tag">Mertens</span><span class="tag">Goldbach</span><span class="tag">abc</span></div>
-          </article>
-
-          <article class="card">
-            <div class="num">C — RECURSIVE GEOMETRY</div>
-            <h3>Cartan recursion & birth calculus</h3>
-            <p>A general program for provenance-bearing finite objects, recursive extension data, compatible readouts, reconstruction, and global obstruction or capacity mechanisms.</p>
-            <div class="tags"><span class="tag">recursive Cartan</span><span class="tag">birth calculus</span><span class="tag">descent</span><span class="tag">transport</span></div>
-          </article>
-
-          <article class="card">
-            <div class="num">D — ANALYSIS / PHYSICS</div>
-            <h3>Navier–Stokes, Kakeya & Yang–Mills interfaces</h3>
-            <p>Discrete-to-continuum certificates, recursive capacity, incidence geometry, FEEC-inspired closure, and gauge-theoretic observability structures for hard analytic and physical problems.</p>
-            <div class="tags"><span class="tag">Navier–Stokes</span><span class="tag">Kakeya</span><span class="tag">FEEC</span><span class="tag">Yang–Mills</span></div>
-          </article>
+          <div class="field-list">
+            <article class="field-row">
+              <div class="field-index sans">A</div>
+              <h3>Arithmetic & motivic geometry</h3>
+              <p>Prismatic and Frobenius structures, arithmetic Cartan transport, Selmer descent, mixed motives, K-theory, Arakelov-type metrics, and integral local-to-global comparison.</p>
+            </article>
+            <article class="field-row">
+              <div class="field-index sans">B</div>
+              <h3>Elliptic curves & Diophantine arithmetic</h3>
+              <p>Source-native elliptic families, recursive Selmer structures, BSD-facing arithmetic, rank constraints, and the relation between local extension data and global rational points.</p>
+            </article>
+            <article class="field-row">
+              <div class="field-index sans">C</div>
+              <h3>Prime arithmetic & analytic number theory</h3>
+              <p>Mertens and Möbius transfer, Goldbach, twin-prime and abc-type prime-birth mechanisms, RH-related finite structures, and exact additive–multiplicative compatibility questions.</p>
+            </article>
+            <article class="field-row">
+              <div class="field-index sans">D</div>
+              <h3>Recursive geometry & analysis</h3>
+              <p>Recursive capacity, incidence geometry, finite obstruction systems, sticky Kakeya structures, and algebraic certificates motivated by Navier–Stokes regularity.</p>
+            </article>
+            <article class="field-row">
+              <div class="field-index sans">E</div>
+              <h3>Gauge theory & mathematical physics</h3>
+              <p>Yang–Mills observability, gauge-invariant descent, momentum-space structure, spectral interfaces, and geometric mechanisms relevant to mass-gap questions.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="framework">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">02 / Framework</div>
-            <h2>A shared local-to-global architecture</h2>
-          </div>
-          <p class="section-copy">
-            Across different applications, the recurring workflow is to preserve source information long enough
-            for compatibility, descent, or capacity constraints to become visible before quotienting or passing to asymptotic readouts.
+      <div class="wrap section-grid">
+        <div class="section-label sans">02 · Common architecture</div>
+        <div>
+          <h2>Finite structure before global readout</h2>
+          <p class="intro">
+            Across different branches, the recurring design principle is to postpone quotienting until source information,
+            compatibility, and reconstruction have been tested exactly.
           </p>
-        </div>
 
-        <div class="framework">
-          <div class="framework-main">
-            <p>A schematic form of the program:</p>
-            <div class="formula">source data → recursive transport → compatible finite readouts → descent / obstruction / capacity</div>
-            <p>
-              The emphasis is on exact finite structure: provenance, extension classes, filtered diagrams,
-              incidence relations, arithmetic lattices, and certified reconstruction maps. Continuous or analytic quantities enter as readouts when the problem requires them.
-            </p>
-          </div>
-          <div class="framework-side">
-            <div class="principle"><strong>Source-native objects</strong><span>Keep the arithmetic or geometric object visible before compression.</span></div>
-            <div class="principle"><strong>Recursive compatibility</strong><span>Track how local certificates persist, split, or obstruct extension.</span></div>
-            <div class="principle"><strong>Finite reconstruction</strong><span>Prefer exact diagrams and computable finite witnesses over informal asymptotics.</span></div>
-            <div class="principle"><strong>Global readout</strong><span>Extract a descent, rigidity, capacity, spectral, or counting consequence only after compatibility is certified.</span></div>
+          <div class="architecture">source object → recursive transport → compatible finite readouts → reconstruction / descent → global obstruction, capacity, height, or spectrum</div>
+
+          <div class="principles">
+            <div class="principle"><b>Source-native objects</b><span>Arithmetic or geometric source data remain visible long enough to retain provenance.</span></div>
+            <div class="principle"><b>Recursive compatibility</b><span>Local certificates are tracked through extension, branching, transport, and coarsening.</span></div>
+            <div class="principle"><b>Exact reconstruction</b><span>Finite diagrams, lattices, incidence systems, and algebraic witnesses are preferred where available.</span></div>
+            <div class="principle"><b>Controlled readout</b><span>Analytic, metric, spectral, or asymptotic quantities enter only after the finite compatibility layer is established.</span></div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="programs">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">03 / Programs</div>
-            <h2>Active directions</h2>
-          </div>
-          <p class="section-copy">Several branches are developed in parallel, with interfaces built only when the source structures genuinely match.</p>
-        </div>
+      <div class="wrap section-grid">
+        <div class="section-label sans">03 · Active programs</div>
+        <div>
+          <h2>Current research programs</h2>
+          <p class="intro">The following branches are developed in parallel. Interfaces are added only when the source structures genuinely match.</p>
 
-        <div class="programs">
-          <article class="program"><h3>Selmer–Cartan–Motivic</h3><p>Global descent, arithmetic transport, motivic extension data, and metric/height realizations.</p><small>Arithmetic geometry</small></article>
-          <article class="program"><h3>Elliptic / BSD</h3><p>Source-native elliptic families, recursive Selmer mechanisms, rank information, and BSD-facing interfaces.</p><small>Diophantine geometry</small></article>
-          <article class="program"><h3>Prime-birth arithmetic</h3><p>Additive–multiplicative structures for abc, Goldbach, twin primes, Mertens, and related prime dynamics.</p><small>Number theory</small></article>
-          <article class="program"><h3>Recursive capacity</h3><p>Finite recursive capacity certificates and exact algebraic tests motivated by Navier–Stokes regularity.</p><small>Geometric analysis</small></article>
-          <article class="program"><h3>Sticky Kakeya</h3><p>Source-visible incidence structures, depth recursion, switching data, and combinatorial capacity constraints.</p><small>Incidence geometry</small></article>
-          <article class="program"><h3>Yang–Mills interface</h3><p>Gauge-invariant observability, momentum-space descent, spectral structure, and mass-gap-facing geometry.</p><small>Mathematical physics</small></article>
+          <div class="program-table">
+            <div class="program-row">
+              <div class="program-name">Selmer–Cartan–Motivic</div>
+              <div class="program-copy">Arithmetic transport, global descent, motivic extension data, Selmer structures, and metric/height realization.</div>
+              <div class="status">active</div>
+            </div>
+            <div class="program-row">
+              <div class="program-name">Elliptic / BSD</div>
+              <div class="program-copy">Source-native elliptic recursion, recursive Selmer mechanisms, rational-point information, and BSD-facing interfaces.</div>
+              <div class="status">active</div>
+            </div>
+            <div class="program-row">
+              <div class="program-name">Prime-Birth Arithmetic</div>
+              <div class="program-copy">Additive–multiplicative finite structures for Mertens, Goldbach, twin primes, abc, and related prime dynamics.</div>
+              <div class="status">active</div>
+            </div>
+            <div class="program-row">
+              <div class="program-name">Recursive Capacity</div>
+              <div class="program-copy">Exact finite-capacity and algebraic obstruction mechanisms motivated by three-dimensional Navier–Stokes.</div>
+              <div class="status">active</div>
+            </div>
+            <div class="program-row">
+              <div class="program-name">Sticky Kakeya</div>
+              <div class="program-copy">Source-visible incidence geometry, switching data, recursive depth structure, and combinatorial capacity bounds.</div>
+              <div class="status">active</div>
+            </div>
+            <div class="program-row">
+              <div class="program-name">Yang–Mills Interface</div>
+              <div class="program-copy">Gauge-invariant observability, momentum-space descent, spectral structure, and mass-gap-facing geometric interfaces.</div>
+              <div class="status">active</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="manuscripts">
+      <div class="wrap section-grid">
+        <div class="section-label sans">04 · Working manuscripts</div>
+        <div>
+          <h2>Selected manuscript lines</h2>
+          <p class="intro">
+            These are evolving research manuscripts and program notes. Titles below describe the current lines of work;
+            public archival links will be added when individual manuscripts reach a stable release state.
+          </p>
+
+          <div class="manuscripts">
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Arithmetic geometry</div>
+                <h3>Unified Selmer–Cartan–Motivic Geometry</h3>
+                <p>Global arithmetic descent, Frobenius/Cartan transport, motivic extension data, and integral metric interfaces.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Elliptic curves</div>
+                <h3>Source-Native Elliptic Birth Calculus</h3>
+                <p>Recursive arithmetic families, source-preserving rank information, and interfaces with Selmer and BSD structures.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Number theory</div>
+                <h3>Mertens Birth–Parity Transfer</h3>
+                <p>Finite parity-transfer structures, arithmetic reconstruction, and the separation of genuine source information from quotient-level recodings.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Prime arithmetic</div>
+                <h3>Goldbach Fixed-Anchor Infinite Tail</h3>
+                <p>A single-point upward-propagation program using source-visible finite structure rather than exceptional-set or density arguments.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Prime arithmetic</div>
+                <h3>abc Prime-Birth</h3>
+                <p>Recursive prime-source packets, record births, renewal structure, and multi-parent additive–multiplicative arithmetic.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Geometric analysis</div>
+                <h3>Recursive Capacity for Navier–Stokes</h3>
+                <p>Finite recursive capacity identities, Frobenius-type algebraic tests, and exact obstruction mechanisms for regularity-facing analysis.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Incidence geometry</div>
+                <h3>Sticky Kakeya Birth Calculus</h3>
+                <p>Depth-two switching, source-native outputs, incidence compression, and capacity mechanisms in sticky Kakeya configurations.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+
+            <article class="manuscript">
+              <div>
+                <div class="manuscript-type">Mathematical physics</div>
+                <h3>Yang–Mills / Selmer–Cartan–Motivic Interface</h3>
+                <p>Gauge-invariant root-flag observability, physical descent symbols, momentum-space structure, and spectral interfaces.</p>
+              </div>
+              <footer class="sans">Working research line · ongoing</footer>
+            </article>
+          </div>
+
+          <div class="research-note">
+            <strong>Research status.</strong> References to major open problems identify the mathematical target or interface of a research program. They are not claims of resolution unless a theorem is explicitly stated, documented, and independently validated.
+          </div>
         </div>
       </div>
     </section>
 
     <section id="methods">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">04 / Methods</div>
-            <h2>Working toolkit</h2>
+      <div class="wrap section-grid">
+        <div class="section-label sans">05 · Methods</div>
+        <div>
+          <h2>Working toolkit</h2>
+          <p class="intro">Structural mathematics is combined with exact computation and, where the statements are sufficiently mature, formal verification.</p>
+
+          <div class="tool-grid">
+            <div class="tool"><strong>Arithmetic geometry</strong>Selmer theory, extension data, prisms, Frobenius, K-theory, and mixed-motivic structures.</div>
+            <div class="tool"><strong>Homological methods</strong>Cartan/Spencer structures, derived data, obstruction classes, and finite diagram reconstruction.</div>
+            <div class="tool"><strong>Combinatorics</strong>Incidence systems, parity transfer, recursive trees, switching structures, and finite capacity counts.</div>
+            <div class="tool"><strong>Exact computation</strong>SageMath, symbolic algebra, finite-field tests, Smith normal forms, and Macaulay-style calculations.</div>
+            <div class="tool"><strong>Formalization</strong>Lean-oriented theorem packaging and machine-checkable interfaces where useful.</div>
           </div>
-          <p class="section-copy">The work mixes structural mathematics with exact computation and, where useful, formal verification.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="methods">
-          <div class="method"><b>Algebraic geometry</b>Selmer theory, extensions, filtrations, K-theory, motivic and prismatic structures.</div>
-          <div class="method"><b>Homological methods</b>Cartan/Spencer ideas, derived data, obstruction classes, finite diagram reconstruction.</div>
-          <div class="method"><b>Combinatorics</b>Incidence systems, parity transfer, recursive trees, finite certificates, capacity counts.</div>
-          <div class="method"><b>Exact computation</b>SageMath, symbolic algebra, finite-field checks, Smith/Macaulay-style calculations.</div>
-          <div class="method"><b>Formalization</b>Lean-oriented theorem packaging and machine-checkable interfaces where mature enough.</div>
-        </div>
-
-        <div class="note" style="margin-top: 28px;">
-          <strong style="color:var(--text)">Research status.</strong>
-          This site describes active research programs and working mathematical directions. References to major open problems indicate the target or interface of a project, not an assertion that the problem has been resolved, unless a result is explicitly stated and independently documented.
+    <section id="contact">
+      <div class="wrap section-grid">
+        <div class="section-label sans">06 · Contact</div>
+        <div class="contact-box">
+          <div>
+            <h2>Research correspondence</h2>
+            <p>For mathematical correspondence, manuscript discussion, or technical questions related to the programs above, email is the most direct channel.</p>
+          </div>
+          <div class="contact-links sans">
+            <a href="mailto:Chenxi_Cai@live.com"><span>Email</span><span>↗</span></a>
+            <a href="https://github.com/cchx0000"><span>GitHub</span><span>↗</span></a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer sans">
     <div class="wrap footer-inner">
       <span>cchx0000 · mathematical research</span>
-      <div class="footer-links">
-        <a href="https://github.com/cchx0000">GitHub</a>
-        <a href="mailto:Chenxi_Cai@live.com">Email</a>
-      </div>
+      <span>Arithmetic · Geometry · Analysis · Mathematical Physics</span>
     </div>
   </footer>
 </body>
